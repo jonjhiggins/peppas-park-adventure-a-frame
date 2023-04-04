@@ -1,16 +1,26 @@
 <html>
   <head>
     <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@fb96ab2/dist/aframe-extras.js"></script>-->
     <script src="main.js"></script>
   </head>
   <body>
     <a-scene>
       <a-camera
+        follow-player
         position="0 0.8 1"
         rotation="-10 0 0"
         look-controls-enabled="false"
         wasd-controls-enabled="false"
       ></a-camera>
+
+      <!-- Player -->
+      <a-box
+        id="player"
+        position="0 0.35 -0.5"
+        scale="0.5 0.5 0.5"
+        wasd-controls
+      ></a-box>
 
       <a-light position="0 2 0" color="#FFF4D6" intensity="10000"></a-light>
       <!-- Park -->
@@ -56,8 +66,7 @@
         metalness="1"
       ></a-box>
       <!-- Park -->
-      <!-- Player -->
-      <a-box position="0 0.25 -0.6" scale="0.5 0.5 0.5"></a-box>
+
       <!-- Player  -->
       <!-- Bad dogs -->
       <a-box position="2.9, 0.25, -10.75" scale="0.5 0.5 0.5"></a-box>
