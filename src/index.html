@@ -6,89 +6,94 @@
   </head>
   <body>
     <a-scene>
+      <a-assets>
+        <a-asset-item id="bad-dog-obj" src="assets/bad-dog.obj"></a-asset-item>
+        <a-asset-item id="bad-dog-mtl" src="assets/bad-dog.mtl"></a-asset-item>
+        <a-asset-item id="peppa-glb" src="assets/peppa.glb"></a-asset-item>
+        <a-mixin
+          id="park"
+          material="color: #348411; roughness: 0.5; metalness: 1;"
+        ></a-mixin>
+      </a-assets>
       <a-camera
         follow-player
         position="0 0.8 1"
         rotation="-10 0 0"
+        a
         look-controls-enabled="false"
         wasd-controls-enabled="false"
       ></a-camera>
 
       <!-- Player -->
-      <a-box
+      <a-entity
         id="player"
-        position="0 0.35 -0.5"
+        gltf-model="#peppa-glb"
+        position="0 0.8 -0.5"
         scale="0.5 0.5 0.5"
+        rotation="0 0 0"
         wasd-controls
-      ></a-box>
+      ></a-entity>
 
-      <a-light position="0 2 0" color="#FFF4D6" intensity="10000"></a-light>
+      <a-light position="0 2 0" color="#FFF4D6" intensity="1.5"></a-light>
       <!-- Park -->
       <a-box
+        mixin="park"
         position="0 -0.1 -25"
         scale="10 0.2 50"
         rotation="0 0 0"
-        color="#348411"
-        roughness="0"
-        metalness="1"
       ></a-box>
 
       <a-box
+        mixin="park"
         position="-5 0.3 -25"
         scale="0.5 1 50"
         rotation="0 0 0"
-        color="#348411"
-        roughness="0"
-        metalness="1"
       ></a-box>
       <a-box
+        mixin="park"
         position="5 0.3 -25"
         scale="0.5 1 50"
         rotation="0 0 0"
-        color="#348411"
-        roughness="0"
-        metalness="1"
       ></a-box>
       <a-box
+        mixin="park"
         position="0 0.3 -50"
         scale="10.5 1 0.5"
         rotation="0 0 0"
-        color="#348411"
-        roughness="0"
-        metalness="1"
       ></a-box>
       <a-box
+        mixin="park"
         position="0 0.3 0"
         scale="10.5 1 0.5"
         rotation="0 0 0"
-        color="#348411"
-        roughness="0"
-        metalness="1"
       ></a-box>
       <!-- Park -->
 
-      <!-- Player  -->
       <!-- Bad dogs -->
-      <a-box
-        position="2.9, 0.25, -10.75"
+      <a-entity
+        obj-model="obj: #bad-dog-obj; mtl: #bad-dog-mtl"
+        position="2.9 0.25 -10.75"
         scale="0.5 0.5 0.5"
         control-bad-dog
-      ></a-box>
-      <a-box
+      ></a-entity>
+      <a-entity
+        obj-model="obj: #bad-dog-obj; mtl: #bad-dog-mtl"
         position="-1.29, 0.25, -35.75"
         scale="0.5 0.5 0.5"
         control-bad-dog
-      ></a-box>
-      <a-box
+      ></a-entity>
+      <a-entity
+        obj-model="obj: #bad-dog-obj; mtl: #bad-dog-mtl"
         position="-3.12, 0.25, -25"
         scale="0.5 0.5 0.5"
         control-bad-dog
-      ></a-box>
-      <a-box
+      ></a-entity>
+      <a-entity
+        obj-model="obj: #bad-dog-obj; mtl: #bad-dog-mtl"
         position="3.78, 0.25, -35"
         scale="0.5 0.5 0.5"
         control-bad-dog
-      ></a-box>
+      ></a-entity>
       <!-- Bad dogs -->
       <a-sky color="#314D79"></a-sky>
     </a-scene>
