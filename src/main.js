@@ -12,3 +12,14 @@ AFRAME.registerComponent("follow-player", {
     this.el.setAttribute("position", position);
   },
 });
+
+AFRAME.registerComponent("control-bad-dog", {
+  init: function () {
+    this.playerEl = this.el.sceneEl.querySelector("#player");
+    this.speed = 0.005;
+  },
+  tick: function (time, timeDelta) {
+    this.el.object3D.lookAt(this.playerEl.object3D.position);
+    this.el.object3D.translateZ(1 * timeDelta * this.speed);
+  },
+});
